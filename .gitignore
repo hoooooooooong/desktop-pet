@@ -41,6 +41,5 @@ yarn-error.log*
 converted_frames.txt
 
 # Assets
-*.png
 !/src/assets/**/*.png
 !/src-tauri/icons/*.png
