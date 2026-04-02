@@ -1,0 +1,15 @@
+{
+  "name": "desktop-pet",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "tauri": "tauri",
+    "dev": "tauri dev",
+    "build": "tauri build"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2",
+    "gifwrap": "^0.10.1",
+    "jimp": "^0.16.1"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rustc:*)",
+      "Bash(cargo:*)",
+      "Bash(npm install:*)",
+      "Bash(python3:*)",
+      "Bash(npx tauri:*)",
+      "Bash(timeout 5 ./src-tauri/target/debug/desktop-pet.exe:*)",
+      "Bash(taskkill:*)",
+      "Bash(./src-tauri/target/debug/desktop-pet.exe:*)",
+      "Bash(tasklist:*)",
+      "Bash(npm run:*)",
+      "mcp__playwright__browser_navigate"
+    ]
+  }
+}

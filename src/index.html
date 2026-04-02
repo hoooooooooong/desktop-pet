@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>像素小龙</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Main Pet Display - canvas fills entire window, clean look -->
+  <div id="pet-container" data-tauri-drag-region>
+    <canvas id="pet-canvas" width="200" height="240" data-tauri-drag-region></canvas>
+  </div>
+
+  <!-- Right-click Context Menu -->
+  <div id="context-menu" class="context-menu">
+    <div class="menu-item" id="menu-feed">🍖 喂食</div>
+    <div class="menu-item" id="menu-play">🎮 玩耍</div>
+    <div class="menu-item" id="menu-sleep">💤 睡觉</div>
+    <div class="menu-item" id="menu-fire">🔥 喷火</div>
+    <div class="menu-item" id="menu-fly">🦋 飞行</div>
+    <div class="menu-item" id="menu-stats">📊 状态</div>
+  </div>
+
+  <!-- Stats Panel (opened from right-click menu) -->
+  <div id="stats-panel" class="overlay" style="display:none">
+    <div class="overlay-header">
+      <h2>📊 状态</h2>
+      <button id="stats-close" class="close-btn">&times;</button>
+    </div>
+    <div class="stats-content" id="stats-content"></div>
+  </div>
+
+  <!-- Minigame Overlay -->
+  <div id="minigame-overlay" class="overlay" style="display:none">
+    <div class="overlay-header">
+      <h2>小游戏</h2>
+      <button id="minigame-close" class="close-btn">&times;</button>
+    </div>
+    <div id="minigame-menu" class="game-menu">
+      <div class="game-card" id="game-fruit-btn">
+        <div class="game-icon">🍎</div>
+        <div class="game-title">接水果</div>
+        <div class="game-desc">左右移动接住水果，避开炸弹！</div>
+        <div class="game-score">最高分: <span id="fruit-high">0</span></div>
+      </div>
+      <div class="game-card" id="game-fly-btn">
+        <div class="game-icon">🦅</div>
+        <div class="game-title">飞翔挑战</div>
+        <div class="game-desc">点击或空格控制小龙躲避障碍！</div>
+        <div class="game-score">最高分: <span id="fly-high">0</span></div>
+      </div>
+    </div>
+    <div id="minigame-play" style="display:none">
+      <canvas id="minigame-canvas" width="560" height="380"></canvas>
+    </div>
+  </div>
+
+  <!-- Dressroom Overlay -->
+  <div id="dressroom-overlay" class="overlay" style="display:none">
+    <div class="overlay-header">
+      <h2>换装</h2>
+      <button id="dressroom-close" class="close-btn">&times;</button>
+    </div>
+    <div class="dressroom-content">
+      <div class="dressroom-left">
+        <h3>配件</h3>
+        <div id="accessory-grid" class="accessory-grid"></div>
+      </div>
+      <div class="dressroom-right">
+        <h3>已装备</h3>
+        <div id="equipped-list" class="equipped-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Settings Panel -->
+  <div id="settings-panel" class="overlay" style="display:none">
+    <div class="overlay-header">
+      <h2>设置</h2>
+      <button id="close-settings" class="close-btn">&times;</button>
+    </div>
+    <div class="settings-content">
+      <div class="setting-row">
+        <label>小龙名字</label>
+        <input type="text" id="pet-name-input" maxlength="10" placeholder="给小龙取个名字">
+      </div>
+      <div class="setting-row">
+        <label>龙的类型</label>
+        <select id="dragon-type-select"></select>
+      </div>
+      <div class="setting-row">
+        <button id="reset-save-btn" class="danger-btn">重置存档</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Achievement Notification -->
+  <div id="achievement-notification" class="achievement-notification"></div>
+
+  <!-- Confirm Dialog -->
+  <div id="confirm-dialog" class="confirm-overlay" style="display:none">
+    <div class="confirm-box">
+      <div class="confirm-msg" id="confirm-msg"></div>
+      <div class="confirm-btns">
+        <button id="confirm-cancel" class="confirm-cancel">取消</button>
+        <button id="confirm-ok" class="confirm-ok">确定</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/sprites.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/pet.js"></script>
+  <script src="js/status.js"></script>
+  <script src="js/interaction.js"></script>
+  <script src="js/minigame.js"></script>
+  <script src="js/dressroom.js"></script>
+  <script src="js/achievement.js"></script>
+  <script src="js/persistence.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+[[permission]]
+identifier = "allow-move-window"
+description = "Allows moving the window"
+commands.allow = ["move_window"]
+
+[[permission]]
+identifier = "allow-resize-window"
+description = "Allows resizing the window"
+commands.allow = ["resize_window", "reset_window_size"]

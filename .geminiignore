@@ -1,0 +1,11 @@
+# Ignore large folders for Gemini CLI
+node_modules/
+src-tauri/target/
+.git/
+.claude/
+.vscode/
+.idea/
+# Binary assets if needed
+# *.png
+# *.jpg
+# *.gif
